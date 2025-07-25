@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ClarityEd Brand Colors - Bright & UX-Focused */
+    --primary: 220 100% 60%;        /* Bright Blue #3366FF */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 160 100% 45%;       /* Bright Teal #00E6B8 */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 280 100% 65%;          /* Bright Purple #A855F7 */
+    --accent-foreground: 0 0% 100%;
+    --success: 140 100% 50%;         /* Bright Green #00FF66 */
+    --warning: 45 100% 55%;          /* Bright Orange #FFB800 */
+    --danger: 0 100% 60%;            /* Bright Red #FF3333 */
+    --background: 0 0% 100%;         /* Pure White */
+    --foreground: 222 84% 5%;        /* Dark Text */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 220 100% 60%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    --primary: 220 100% 70%;
+    --secondary: 160 100% 55%;
+    --accent: 280 100% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ClarityEd Custom Styles */
+.clarity-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+}
+
+.clarity-card {
+  @apply bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300;
+}
+
+.clarity-button-primary {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.clarity-alert-critical {
+  @apply bg-red-50 border-l-4 border-red-500 text-red-800;
+}
+
+.clarity-alert-warning {
+  @apply bg-orange-50 border-l-4 border-orange-500 text-orange-800;
+}
+
+.clarity-alert-success {
+  @apply bg-green-50 border-l-4 border-green-500 text-green-800;
+}
+
+.clarity-metric-card {
+  @apply bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300;
+}
